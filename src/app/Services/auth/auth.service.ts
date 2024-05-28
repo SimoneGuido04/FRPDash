@@ -8,36 +8,41 @@ import {Router} from "@angular/router";
 export class AuthService {
 
   basicAuth: string = ""
+  static logged : boolean;
 
   getAuthorizationHeader() {
-    return {headers : new HttpHeaders({'Authorization': "Basic " + this.basicAuth}).set('Www-Authenticate', '')
+    return {
+      headers: new HttpHeaders({'Authorization': "Basic " + this.basicAuth})
 
     };
   }
 
+  getLogged() {
+    return AuthService.logged;
+  }
 
 
   getStatus() {
     this.http.get("https://frpadmin.simoneguido.it", this.getAuthorizationHeader()).subscribe({
 
-      next: response => {
-        console.log(response);
+      next: (data)=> {
+        AuthService.logged = true;
       },
 
       error: err => {
         console.log(err);
-        if (err.status === 401) {
-          this.router.navigate(['/login']);
-        }
+        AuthService.logged = true;
+        this.router.navigate(['/login']);
       },
 
       complete: () => {
+
       }
 
 
     })
   }
 
-  constructor(private http: HttpClient, private router : Router) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 }

@@ -41,6 +41,5 @@ export class LoginComponent {
   }
 
   constructor(private authService: AuthService) {
-    console.log(btoa("simo:Simoneguido04"));
   }
 }
