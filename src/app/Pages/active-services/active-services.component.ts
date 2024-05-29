@@ -11,6 +11,6 @@ import {AuthService} from "../../Services/auth/auth.service";
 export class ActiveServicesComponent {
 
   constructor(private authService: AuthService) {
-    console.log(this.authService.getLogged());
+    console.log(authService.getLogged());
   }
 }

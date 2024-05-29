@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {MatButton} from '@angular/material/button';
+import {AuthService} from "./Services/auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,6 @@ import {MatButton} from '@angular/material/button';
 })
 export class AppComponent {
   title = 'FRPDash';
+  constructor(private authService: AuthService) {
+  }
 }
