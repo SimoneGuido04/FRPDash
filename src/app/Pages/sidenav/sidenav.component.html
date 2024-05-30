@@ -1,13 +1,17 @@
 <mat-sidenav-container class="absolute top-0 left-0 h-screen">
-  <mat-sidenav class="w-10"  mode="side" [(opened)]="opened">
-    <div class="bg-primary w-full h-full">
-     <h1 class="text-amber-950">dentro</h1>
+  <mat-sidenav #sidenav class="w-10"  mode="side" [(opened)]="opened">
+    <div class="bg-primary w-full h-full flex justify-center">
+     <h3 class="text-white">Simone Guido</h3>
 
     </div>
 
   </mat-sidenav>
 
   <mat-sidenav-content class="">
+    <button mat-mini-fab color="accent" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
   fuori
   </mat-sidenav-content>
 </mat-sidenav-container>

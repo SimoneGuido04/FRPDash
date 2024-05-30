@@ -15,5 +15,6 @@ export class ActiveServicesComponent {
 
   constructor(private authService: AuthService) {
     console.log(authService.getLogged());
+    console.log(authService.data);
   }
 }
