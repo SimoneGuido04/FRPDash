@@ -47,7 +47,7 @@ export class AuthService {
 
   getStatus() {
     //this.http.get <Services>("http://localhost:7400/api/status", this.getAuthorizationHeader()).subscribe({
-    this.http.get <Services>("https://frpadmin.simoneguido.it/api/status", this.getAuthorizationHeader()).subscribe({
+    this.http.get <Services>("https://frpdash.simoneguido.it/api/status", this.getAuthorizationHeader()).subscribe({
       next: (data)=> {
         this.data = data;
         this.setLData("services", data);
