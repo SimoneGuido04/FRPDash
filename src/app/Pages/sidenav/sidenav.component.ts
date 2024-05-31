@@ -5,6 +5,7 @@ import {FormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sidenav',
@@ -16,7 +17,15 @@ import {MatDividerModule} from "@angular/material/divider";
 export class SidenavComponent {
   opened: boolean = true
 
-  constructor() {
+  navigateToConfigure() {
+    this.router.navigate(['/configure']);
+  }
+
+  navigateToServices() {
+    this.router.navigate(['/services']);
+  }
+
+  constructor(private router: Router) {
 
 
   }

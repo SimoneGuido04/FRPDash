@@ -1,0 +1,4 @@
+.content-hidden {
+  width: 0; /* Imposta la larghezza del contenuto principale a zero */
+  overflow: hidden; /* Assicura che il contenuto non trabocchi */
+}
